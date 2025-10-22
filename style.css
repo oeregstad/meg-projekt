@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Søkte etter gode farge palletter for en nettside */
+
+:root {
+    --color-primary: #0049B7;
+    /* Brutal Blue */
+    --color-accent: #ff1d58;
+    /* Yass Queen */
+    --color-accent-soft: #f75990;
+    /* Sister Sister */
+    --color-highlight: #fff685;
+    /* Crown Yellow */
+    --color-bright: #00DDFF;
+    /* Blue Light */
+
+    --color-beige: #fff5d7;
+    /* Ragin Beige */
+    --color-coral: #ff5e6c;
+    /* Coral Pink */
+    --color-yellow: #feb300;
+    /* Sleuthe Yellow */
+    --color-pink-leaf: #ffaaab;
+    /* Pink Leaf */
+
+    --color-popsicle: #0f2862;
+    /* Blue Popsicle */
+    --color-redline: #9e363a;
+    /* Redline */
+    --color-purple-shadow: #091f36;
+    /* Purple Shadow */
+    --color-grey-blue: #4f5f76;
+    /* Grey Blue Leaf */
+
+
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+}
+
+
+
+
+/* CSS reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--color-popsicle), var(--color-purple-shadow));
+    color: var(--color-text);
+
+
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ol,
+.ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+/* /CSS reset */
+
+.nav {
+    background-color: var(--color-popsicle);
+    color: white;
+   /*  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-popsicle);
+    color: white;
+    z-index: 1000; */
+ 
+
+
+
+
+}
+
+
+
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-redline);
+    font-size: 20px;
+    padding: 15px;
+
+
+
+
+}
+
+.nav a:hover {
+    transition: 500ms;
+    border-radius: 10px;
+    transform: scale(1.2);
+    color: var(--color-accent-soft);
+
+
+
+}
+
+
+h1 {
+    text-align: center;
+    color: var(--color-redline);
+    margin-top: 200px;
+    
+}
+
+.content-a {
+    grid-row: 1 / 3;
+    min-height: 300px;
+
+
+    text-align: center;
+
+
+
+
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-purple-shadow);
+    border-radius: 20px;
+
+
+
+}
+
+.grid-container>div {
+    background-color: var(--color-grey-blue);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--color-blue-popsicle);
+    font-weight: bold;
+
+
+}
+
+.grid-container>div:hover {
+    transform: scale(1.01);
+
+}
+
+
+
+
+.grid-container>* {
+    border: 2px solid black;
+    padding: 10px;
+
+
+}
+
+.footer {
+    border: 2px solid black;
+    display: flex;
+    color: white;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-popsicle);
+
+
+}
+
+
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+}
+
+.tabell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    
+   
+
+
+}
+
+/* Farge på fagene */
+
+.Fysikk {
+    background-color: #82eefd;
+}
+
+.Kjemi {
+    background-color: forestgreen;
+}
+
+.Norsk {
+    background-color: crimson;
+}
+
+.Spansk {
+    background-color: hotpink;
+}
+
+.Historie {
+    background-color: yellow;
+}
+
+.Matte {
+    background-color: #3DED97
+}
+
+.Gym {
+    background-color: #00b4d8;
+}
+
+.IT {
+    background-color: #5dbb63;
+}
+
+.Klassens {
+    background-color: #52b2bf;
+}
+
+/* /Farge på fagene */
