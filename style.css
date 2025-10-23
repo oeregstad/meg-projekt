@@ -33,6 +33,50 @@
     --color-grey-blue: #4f5f76;
     /* Grey Blue Leaf */
 
+    --color--dypblå: #0f2862;
+    --color--mykgrønnblå: #5b8c85;
+    --color-lyskorall: #ff6b6b;
+    --color--lysbakgrunn: #f8f9fa;
+
+
+    --color-main-dark: #264653;
+    /* Charcoal */
+    --color-highlight: #F46B61;
+    /* Coral */
+    --color-soft-bg: #FFFFF0;
+    /* Ivory */
+    --color-secondary-text: #333333;
+
+    --dark-blue: #264653;
+    /* Charcoal – navbar, footer, overskrifter */
+    --coral-accent: #F46B61;
+    /* Coral – knapper, lenker, hover */
+    --soft-ivory: #FFFFF0;
+    /* Ivory – bakgrunn */
+    --text-dark: #333333;
+    /* generell tekst */
+    --text-light: #FFFFFF;
+    /* hvit tekst for mørk bakgrunn */
+    --highlight: #FFD166;
+    /* gul aksent for små detaljer */
+    --table-bg: #E9ECEF;
+    /* lys grå for tabellceller */
+    --table-border: #264653;
+    /* mørk kant på tabell */
+    --grid-bg: #F4F4F9;
+
+    --dark-charcoal: #1F2937;     /* mørk bakgrunn / tekst */
+    --soft-gray: #F0F4F8;         /* lys bakgrunn / grid-tabell bakgrunn */
+    --blue-accent: #3B82F6;       /* aksent / lenker / hover */
+    --mid-charcoal: #334155; 
+
+        --bg-dark: #0F172A;      /* mørk bakgrunn for body, sections */
+    --blue-accent2: #1E3A8A;  /* aksent / lenker / hover / border */
+    --charcoal: #1F2937;     /* sekundær mørk tone / navbar, footer, h1 */
+    --soft-light: #E0F2FE;   
+        --link-color: #38BDF8; /* lys blå til lenker */
+
+
 
     --color-bg: #ffffff;
     --color-text: #1a1a1a;
@@ -52,14 +96,12 @@
 
 body {
     font-size: 16px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Arial", sans-serif;
     min-height: 150vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, var(--color-popsicle), var(--color-purple-shadow));
-    color: var(--color-text);
-
-
+    background-color: var(--bg-dark);
+    color: var(--soft-light);
 }
 
 main {
@@ -67,6 +109,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -87,22 +130,31 @@ img {
 /* /CSS reset */
 
 .nav {
-    background-color: var(--color-popsicle);
-    color: white;
-   /*  position: fixed;
+    background-color: var(--charcoal);
+    color: var(--soft-light)
+        /*  position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: var(--color-popsicle);
     color: white;
     z-index: 1000; */
- 
-
-
-
-
 }
 
+
+.nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 15px;
+    
+}
+
+.nav a:hover {
+    color: var(--blue-accent);
+    filter: brightness(1.3);
+    transition: 0.5s ease-in-out;
+}
 
 
 
@@ -111,6 +163,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -119,10 +172,11 @@ img {
 
 
 
-.nav a {
+.logo a {
     text-decoration: none;
-    color: var(--color-redline);
-    font-size: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
     padding: 15px;
 
 
@@ -130,11 +184,17 @@ img {
 
 }
 
+.links a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
 .nav a:hover {
     transition: 500ms;
     border-radius: 10px;
     transform: scale(1.2);
-    color: var(--color-accent-soft);
 
 
 
@@ -143,21 +203,41 @@ img {
 
 h1 {
     text-align: center;
-    color: var(--color-redline);
-    margin-top: 200px;
-    
+    font-size: 3rem;
+    color: white;
+    margin: 100px 0 50px;
+    text-shadow: 2px 2px 15px;
+    letter-spacing: 2px;
+
 }
 
 .content-a {
     grid-row: 1 / 3;
     min-height: 300px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content-a img {
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.5s ease-in-out;
+}
+
+.content-a:hover img {
+    transform: scale(1.1);
 
 
-    text-align: center;
 
+}
 
-
-
+@media (max-width: 700px) {
+    .content-a img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
 }
 
 
@@ -166,29 +246,34 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: var(--color-purple-shadow);
+    padding: 60px;
     border-radius: 20px;
+    box-shadow: 0 8px 25px;
 
 
 
 }
 
 .grid-container>div {
-    background-color: var(--color-grey-blue);
-    color: #fff;
-    padding: 20px;
+    background-color: #1F2937;
+    border: 2px solid var(--blue-accent);
+    color:var(--soft-light);
+    padding: 30px;
     border-radius: 10px;
-    border: 2px solid var(--color-blue-popsicle);
+    transition: 0.3s ease-in-out;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px;
     font-weight: bold;
 
 
 }
 
 .grid-container>div:hover {
-    transform: scale(1.01);
+    background-color: #334155;
+    transform: translateY(-6px);
+    transition: 0.3s ease-in-out;
 
 }
 
@@ -202,29 +287,95 @@ h1 {
 
 }
 
+
+@media (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* én kolonne på mobil */
+        padding: 10px;
+    }
+
+    .grid-container > div {
+        font-size: 16px; /* mindre tekst for mindre skjermer */
+        padding: 15px;
+    }
+}
+
 .footer {
-    border: 2px solid black;
+    border: none;
+    box-shadow: 0 2px 10px;
     display: flex;
-    color: white;
-    padding: 20px;
+    color:var(--soft-light);
+    filter: brightness(1.3s);
+
+    padding: 40px 20px;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    background-color: var(--color-popsicle);
+    background-color: var(--charcoal);
 
 
+
+}
+
+.footer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.footer-links a {
+    color: white;
+    font-size: 1.8rem;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+.copyright {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+table{
+    width: 100%;
+    background-color: var(--soft-light);
+    color: var(--bg-dark);
+    border-collapse: collapse;
 }
 
 
 
 th,
 td {
-    border: 1px solid black;
+    border: 1px solid var(--charcoal);
     padding: 10px;
     text-align: center;
     font-size: 20px;
-    background-color: white;
+
+
+}
+
+th {
+    background-color: var(--charcoal);
+    color:var(--soft-light);
+    font-weight: bold;
+}
+
+td:hover {
+    transform: scale(1.03);
+
 }
 
 .tabell {
@@ -232,14 +383,14 @@ td {
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    
-   
+
+
 
 
 }
 
 /* Farge på fagene */
-
+/* 
 .Fysikk {
     background-color: #82eefd;
 }
@@ -274,6 +425,94 @@ td {
 
 .Klassens {
     background-color: #52b2bf;
-}
+} */
 
 /* /Farge på fagene */
+
+.Fysikk {
+    background-color: #A3CEF1;
+    /* Lys blå */
+}
+
+.Kjemi {
+    background-color: #8FD694;
+    /* Myk grønn */
+}
+
+.Norsk {
+    background-color: #F28B82;
+    /* Lys rød/korall */
+}
+
+.Spansk {
+    background-color: #FBB7A9;
+    /* Lys rosa/oransje */
+}
+
+.Historie {
+    background-color: #FFF3B0;
+    /* Myk gul */
+}
+
+.Matte {
+    background-color: #B5E48C;
+    /* Pastellgrønn */
+}
+
+.Gym {
+    background-color: #90E0EF;
+    /* Lys turkis */
+}
+
+.IT {
+    background-color: #9DCEB0;
+    /* Dempa grønnblå */
+}
+
+.Klassens {
+    background-color: #CDB4DB;
+    /* Lys lilla */
+}
+
+
+.interesser {
+    padding: 40px;
+    text-align: center;
+    color: var(--color-bg);
+}
+
+.interesser h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--color-bright);
+}
+
+.interesser-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px  ;
+    justify-items: center;
+}
+
+.interesse{
+    border-radius: 12px;
+    padding: 50px;
+    border: 2px solid black;
+    width: 100%;
+    
+    color: var(--color-bg);
+}
+
+.interesse i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.interesse h3{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.interesse:hover {
+    transform: translateY(-5px);
+}
