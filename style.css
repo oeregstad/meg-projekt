@@ -435,22 +435,27 @@ td:hover {
 }
 
 .interesser-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     gap: 20px  ;
     justify-items: center;
 }
 
 .interesse{
+    display: flex;
+    flex-direction: column;
     border-radius: 12px;
     padding: 50px;
     border: 2px solid black;
     width: 100%;
     
     color: var(--color-bg);
+
+    transition: flex-grow 0.8 ease, flex-shrink 0.8 ease;
 }
 
 .interesse i {
+    align-self: center;
+    
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -463,4 +468,9 @@ td:hover {
 .interesse:hover {
     transform: scale(1.05);
     transition: 1s ;
+    flex-basis: 400%;
+
+
+    
+    
 }
