@@ -435,7 +435,8 @@ td:hover {
 }
 
 .interesser-grid{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px  ;
     justify-items: center;
 }
@@ -449,8 +450,6 @@ td:hover {
     width: 100%;
     
     color: var(--color-bg);
-
-    transition: flex-grow 0.8 ease, flex-shrink 0.8 ease;
 }
 
 .interesse i {
@@ -467,8 +466,8 @@ td:hover {
 
 .interesse:hover {
     transform: scale(1.05);
-    transition: 1s ;
-    flex-basis: 400%;
+    transition: 1s;
+    flex-basis: 800%;
 
 
     
