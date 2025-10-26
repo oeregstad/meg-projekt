@@ -65,16 +65,23 @@
     /* mørk kant på tabell */
     --grid-bg: #F4F4F9;
 
-    --dark-charcoal: #1F2937;     /* mørk bakgrunn / tekst */
-    --soft-gray: #F0F4F8;         /* lys bakgrunn / grid-tabell bakgrunn */
-    --blue-accent: #3B82F6;       /* aksent / lenker / hover */
-    --mid-charcoal: #334155; 
+    --dark-charcoal: #1F2937;
+    /* mørk bakgrunn / tekst */
+    --soft-gray: #F0F4F8;
+    /* lys bakgrunn / grid-tabell bakgrunn */
+    --blue-accent: #3B82F6;
+    /* aksent / lenker / hover */
+    --mid-charcoal: #334155;
 
-        --bg-dark: #0F172A;      /* mørk bakgrunn for body, sections */
-    --blue-accent2: #1E3A8A;  /* aksent / lenker / hover / border */
-    --charcoal: #1F2937;     /* sekundær mørk tone / navbar, footer, h1 */
-    --soft-light: #E0F2FE;   
-        --link-color: #38BDF8; /* lys blå til lenker */
+    --bg-dark: #0F172A;
+    /* mørk bakgrunn for body, sections */
+    --blue-accent2: #1E3A8A;
+    /* aksent / lenker / hover / border */
+    --charcoal: #1F2937;
+    /* sekundær mørk tone / navbar, footer, h1 */
+    --soft-light: #E0F2FE;
+    --link-color: #38BDF8;
+    /* lys blå til lenker */
 
 
 
@@ -102,7 +109,7 @@ body {
     flex-direction: column;
     background-color: var(--bg-dark);
     color: var(--soft-light);
-}
+}   
 
 main {
     flex: 1;
@@ -110,7 +117,10 @@ main {
     justify-content: center;
     align-items: center;
 
+
 }
+
+
 
 
 ol,
@@ -147,7 +157,7 @@ img {
     text-decoration: none;
     font-size: 1.8rem;
     padding: 15px;
-    
+
 }
 
 .nav a:hover {
@@ -253,7 +263,7 @@ h1 {
 .grid-container>div {
     background-color: #1F2937;
     border: 2px solid var(--blue-accent);
-    color:var(--soft-light);
+    color: var(--soft-light);
     padding: 30px;
     border-radius: 10px;
     transition: 0.3s ease-in-out;
@@ -286,7 +296,7 @@ h1 {
 .footer {
     border: none;
     display: flex;
-    color:var(--soft-light);
+    color: var(--soft-light);
     filter: brightness(1.3s);
     padding: 40px 20px;
     justify-content: center;
@@ -294,6 +304,9 @@ h1 {
     text-align: center;
     background-color: var(--charcoal);
     box-shadow: 0 2px 10px;
+    width: 100%;
+    pos
+  
 
 
 
@@ -334,7 +347,7 @@ h1 {
 
 /* timeplan */
 
-table{
+table {
     width: 100%;
     background-color: var(--soft-light);
     color: var(--bg-dark);
@@ -355,7 +368,7 @@ td {
 
 th {
     background-color: var(--charcoal);
-    color:var(--soft-light);
+    color: var(--soft-light);
     font-weight: bold;
 }
 
@@ -408,12 +421,12 @@ td:hover {
 
 .IT {
     background-color: #9DCEB0;
-  
+
 }
 
 .Klassens {
     background-color: #6d74ca;
-    
+
 }
 
 /* /Farge på fagene */
@@ -421,9 +434,12 @@ td:hover {
 /* /timeplan */
 
 .interesser {
+    min-height: 125vh;
+    flex: 1;
     padding: 40px;
     text-align: center;
     color: var(--color-bg);
+
 }
 
 .interesser h2 {
@@ -434,42 +450,82 @@ td:hover {
     color: var(--color-bright);
 }
 
-.interesser-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px  ;
-    justify-items: center;
+.interesser-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+    
 }
 
-.interesse{
+.interesse {
     display: flex;
+    flex: 1 1 200px;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: flex 0.4s ease;
     border-radius: 12px;
     padding: 50px;
     border: 2px solid black;
-    width: 100%;
-    
+    width: 80%;
+
     color: var(--color-bg);
 }
 
+.interesse-row{
+    display: flex;
+    gap: 20px;
+}
+
+
+
 .interesse i {
-    align-self: center;
-    
+
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.interesse h3{
-    margin: 0;
-    font-size: 1rem;
+.interesse h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+
+}
+
+.interesse p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 90%;
+    overflow: hidden;
+    max-height: 60px;
+    transition: max-height 0.4s ease;
+
+}
+
+.interesse:hover p {
+    max-height: 500px;
+}
+
+.interesse img {
+    border-radius: 12px;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+
 }
 
 .interesse:hover {
-    transform: scale(1.05);
-    transition: 1s;
-    flex-basis: 800%;
+    flex: 3 1 200px;
 
 
-    
-    
+}
+
+.interesse:hover img {
+    opacity: 1;
+    max-height: 250px;
 }
