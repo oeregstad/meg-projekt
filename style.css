@@ -531,22 +531,69 @@ td:hover {
 /* bildegallery */
 
 .bilder{
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 50px;
+    text-align: center;
 }
 
 
+.bilder h1{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--soft-light);
+    letter-spacing: 2px;
+
+}
+
 .bilde-grid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    
+    grid-template-columns: repeat(3, 1fr) ;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-auto-rows: 200px;
+
 
 }
 
 .boks{
-    padding: 80px;
-    border: #00DDFF 2px solid;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+
 }
+
+.boks img{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.boks.span3row{
+    grid-row: span 3;
+    
+}
+
+.boks.span2{
+    grid-column: span 2;
+
+}
+
+
+
+
+
+@media (max-width: 760px) {
+    .bilde-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px){
+    .bilde-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
