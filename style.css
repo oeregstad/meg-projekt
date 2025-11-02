@@ -722,9 +722,6 @@ td:hover {
         gap: 15px;
     }
 
-    .boks.span3row{
-        
-    }
 }
 
 @media (max-width: 750px){
