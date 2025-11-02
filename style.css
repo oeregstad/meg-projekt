@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* Søkte etter gode farge palletter for en nettside */
 
@@ -98,12 +99,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-weight: normal;
+
 }
 
 body {
     font-size: 16px;
-    font-family: "Arial", sans-serif;
     min-height: 150vh;
     display: flex;
     flex-direction: column;
@@ -111,10 +111,18 @@ body {
     color: var(--soft-light);
 }   
 
+h1, h2, h3{
+    font-family: "Open Sans";
+}
+p{
+    font-family: "Roboto";
+}
+
 main {
     flex: 1;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 
 
@@ -124,7 +132,7 @@ main {
 
 
 ol,
-.ul {
+ul {
     list-style: none;
 }
 
@@ -154,11 +162,6 @@ img {
 
 }
 
-.nav a:hover {
-    color: var(--link-color);
-    filter: brightness(1.3);
-    transition: 0.5s ease-in-out;
-}
 
 
 
@@ -170,9 +173,6 @@ img {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-
-
 
 
 
@@ -199,13 +199,72 @@ img {
     transition: 500ms;
     border-radius: 10px;
     transform: scale(1.2);
+    color: var(--link-color);
+    filter: brightness(1.3);
+    transition: 0.5s ease-in-out;
 
 
 
 }
 
 
-h1 {
+
+/* mobil vennlig */
+
+
+    
+
+
+@media (max-width: 750px) {
+    .bar{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+ 
+    
+
+    .logo{
+        margin-bottom: 10px;
+        width: 100%;
+        
+    
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        
+
+    }
+
+    .links a{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid rgba(225, 225, 225, 0.1);
+    
+    }
+
+    .logo a{
+        font-size: 1.6rem;
+    }
+
+    .nav a:hover{
+        transform: none;
+    
+    }
+
+    
+}
+
+
+.tittel h1 {
     text-align: center;
     font-size: 3rem;
     color: white;
@@ -227,6 +286,7 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: right center;
     border-radius: 12px;
     transition: 0.5s ease-in-out;
 }
@@ -236,6 +296,14 @@ h1 {
 
 
 
+}
+
+.content-b h3{
+    margin-bottom: 10px;
+}
+
+.content-b2 h3{
+    margin-bottom: 10px;
 }
 
 
@@ -271,7 +339,6 @@ h1 {
 }
 
 .grid-container>div:hover {
-    background-color: #334155;
     transition: 0.3s ease-in-out;
 
 }
@@ -289,8 +356,35 @@ h1 {
 
 @media (max-width: 750px){
     .grid-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
     }
+
+    .content-a,
+    .content-b,
+    .content-b2{
+        grid-row: auto;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .content-a img{
+        width: 90%;
+        object-fit: cover;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .grid-container > div{
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    
 }
 
 
@@ -300,7 +394,7 @@ h1 {
     border: none;
     display: flex;
     color: var(--soft-light);
-    filter: brightness(1.3s);
+    filter: brightness(1.3);
     padding: 40px 20px;
     justify-content: center;
     flex-direction: column;
@@ -350,6 +444,24 @@ h1 {
 
 /* timeplan */
 
+.timeplan-overskrift{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeplan-overskrift h1{
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--color-bright);
+}
+
+.timeplan-overskrift p{
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-bright);
+}
+
 table {
     width: 100%;
     background-color: var(--soft-light);
@@ -382,13 +494,54 @@ td:hover {
 
 .tabell {
     display: flex;
+    overflow-x: auto;
     justify-content: center;
     align-items: center;
     padding: 40px 0;
 
+}
+
+@media (max-width: 1060px) {
+    th, td {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 854px) {
+    th, td {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
 
 
+@media (max-width: 724px) {
+    th, td {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
 
+@media (max-width: 600px) {
+    th, td {
+        font-size: 10px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 500px) {
+    th, td {
+        font-size: 8px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 430px) {
+    th, td {
+        font-size: 7px;
+        padding: 4px;
+    }
 }
 
 /* Farge på fagene */
@@ -439,6 +592,7 @@ td:hover {
 /* Interesser */
 
 .interesser {
+
     min-height: 125vh;
     flex: 1;
     padding: 40px;
@@ -535,6 +689,50 @@ td:hover {
     max-height: 250px;
 }
 
+
+/* mobilvennlig */
+
+@media (max-width: 750px) {
+    .interesser {
+        padding: 20px;
+    }
+
+    .interesser h2 {
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+    }
+
+    .interesser-flex{
+        flex-direction: column;
+        gap: 30px   ;
+        align-items: center;
+    }
+    .interesse-row{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+    }
+
+    .interesse{
+        width: 100%;
+        padding: 30px;
+        flex: 1 1 auto;
+    }
+
+    .interesse p {
+        max-height: none;
+    }
+
+    .interesse img{
+        opacity: 1;
+        max-height: 200px;
+    }
+
+}
+
+
+
 /* /Interesser */
 
 
@@ -547,8 +745,9 @@ td:hover {
 
 .bilder h1{
     font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: var(--soft-light);
+    margin-bottom: 60px;
+    color: var(--color-bright);
+    padding: 20px;
     letter-spacing: 2px;
 
 }
@@ -557,9 +756,10 @@ td:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
     gap: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     grid-auto-rows: 200px;
+    margin-bottom: 150px;
 
 
 }
@@ -584,25 +784,38 @@ td:hover {
     
 }
 
-.boks.span2{
-    grid-column: span 2;
-
-}
 
 
 
 
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
     .bilde-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .boks.span3row{
+        
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 750px){
     .bilde-grid{
         grid-template-columns: 1fr;
+        gap: 15px;
+        grid-auto-rows: 300px;
+        max-width: 90%;
     }
+
+    .boks img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    
+
 }
 
 
